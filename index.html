@@ -5,44 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeNest - Equilibrio Digital</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.7;
-            color: #333;
-            background: #f9f9f9;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+
+        /* 1. HEADER ARRIBA */
+        header {
+            background: #fff;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 { text-align: center; color: #2c3e50; }
-        h2 { color: #3498db; margin-top: 40px; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
-        img { width: 100%; border-radius: 10px; margin: 10px 0; }
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            color: #2c3e50;
+            font-family: 'Georgia', serif;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+        nav a:hover { color: #3498db; }
+
+        /* 2. BANNER GRANDE CON IMAGEN DE FONDO */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1920') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before { /* Capa oscura encima de la imagen */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background: white;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .btn:hover { background: #3498db; color: white; }
     </style>
 </head>
 <body>
 
-    <h1>TimeNest</h1>
-    <h2>Equilibrio Digital: Guía para Padres</h2>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">TimeNest</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Guías</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
 
-    <p>El uso excesivo de pantallas afecta el sueño, la concentración y la socialización de los niños. Aquí tienes 6 medidas prácticas para regular su uso en casa.</p>
-
-    <h2>1. Establecer Horarios Fijos</h2>
-    <p>Define 2 bloques al día para pantallas. Ejemplo: 1 hora después de las tareas y 1 hora después de cenar.</p>
-
-    <h2>2. Zonas Libres de Pantallas</h2>
-    <p>El dormitorio y la mesa de comida deben ser sin celular ni tablet.</p>
-
-    <h2>3. Sé el Ejemplo</h2>
-    <p>Los niños imitan. Si tú bajas el celular durante la cena, ellos también lo harán.</p>
-
-    <h2>4. Ofrece Alternativas</h2>
-    <p>Reemplaza 30 min de tablet por juegos de mesa, deporte, leer o arte.</p>
-
-    <h2>5. Revisa el Contenido</h2>
-    <p>Usa control parental y mira con ellos los videos.</p>
-
-    <h2>6. Usa Reglas Claras</h2>
-    <p>Aplica "Primero tareas, luego pantalla".</p>
+    <!-- BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Equilibrio digital en casa</h1>
+            <p>Ayuda a tus hijos a usar la tecnología sin que los use a ellos. 6 pasos prácticos para padres.</p>
+            <a href="#guias" class="btn">Ver Guías</a>
+        </div>
+    </section>
 
 </body>
 </html>
