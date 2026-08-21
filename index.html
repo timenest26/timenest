@@ -6,7 +6,7 @@
     <title>TimeNest - Equilibrio Digital</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; background: #000; } /* Fondo negro para los bordes */
 
         /* 1. HEADER ARRIBA */
         header {
@@ -40,9 +40,10 @@
         }
         nav a:hover { color: #3498db; }
 
-        /* 2. BANNER CON TU IMAGEN */
+        /* 2. BANNER - AHORA SE VE COMPLETO */
         .hero {
-            background: url('banner.png') no-repeat center/cover; /* <-- AQUÍ VA TU IMAGEN */
+            background: url('banner.png') no-repeat center/contain; /* CAMBIO CLAVE: contain */
+            background-color: #000; /* Fondo negro si sobran bordes */
             height: 500px;
             display: flex;
             justify-content: center;
@@ -55,7 +56,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.55); /* Capa oscura para que se lea el texto */
+            background: rgba(0,0,0,0.4); /* Capa más suave */
         }
         .hero-content {
             position: relative;
@@ -68,10 +69,12 @@
             margin-bottom: 15px;
             font-family: 'Georgia', serif;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Para que se lea mejor */
         }
         .hero p {
             font-size: 18px;
             margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
         .btn {
             background: white;
@@ -85,7 +88,7 @@
         }
         .btn:hover { background: #3498db; color: white; }
 
-        /* 3. RESPONSIVE PARA CELULAR */
+        /* 3. RESPONSIVE PARA CELULAR - AHORA NO SE CORTA */
         @media (max-width: 768px) {
             header {
                 padding: 15px 5%;
@@ -102,18 +105,18 @@
                 font-size: 14px;
             }
             .hero {
-                height: 420px;
-                padding: 0 20px;
-                background-position: center center; /* Centra la imagen en celu */
+                height: 250px; /* Más bajo para que no quede gigante */
+                background-size: contain; /* Se asegura que se vea completa */
             }
             .hero h1 {
-                font-size: 32px;
+                font-size: 24px;
             }
             .hero p {
-                font-size: 15px;
+                font-size: 14px;
             }
             .btn {
-                padding: 10px 25px;
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
     </style>
