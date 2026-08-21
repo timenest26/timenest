@@ -6,7 +6,7 @@
     <title>TimeNest - Equilibrio Digital</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #000; }
+        body { font-family: Arial, sans-serif; background: #fff; } /* FONDO BLANCO */
 
         /* 1. HEADER ARRIBA */
         header {
@@ -40,13 +40,13 @@
         }
         nav a:hover { color: #3498db; }
 
-        /* 2. BANNER RECTANGULAR QUE SE ACHICA SOLO */
+        /* 2. BANNER RECTANGULAR CON FONDO BLANCO */
         .hero {
-            background: url('banner.png') no-repeat center/cover; /* <-- TU IMAGEN */
-            background-color: #000;
+            background: url('banner.png') no-repeat center/contain; /* CAMBIO: contain para que no se corte */
+            background-color: #fff; /* FONDO BLANCO IGUAL QUE ARRIBA */
             width: 100%;
             aspect-ratio: 16 / 6; /* Mantiene proporcion de banner ancho */
-            max-height: 500px; /* En PC no crece tanto */
+            max-height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,7 +58,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.4); /* Capa oscura para que se lea el texto */
         }
         .hero-content {
             position: relative;
@@ -107,8 +107,8 @@
                 font-size: 14px;
             }
             .hero {
-                aspect-ratio: 16 / 7; /* Un poco más alto en celu para que se lea bien */
-                max-height: 300px; /* Que no sea gigante */
+                aspect-ratio: 16 / 7; /* Un poco más alto en celu */
+                max-height: 300px;
             }
             .hero h1 {
                 font-size: 26px;
