@@ -21,10 +21,10 @@
             <a href="#" data-key="faq">PREGUNTAS</a>
             <a href="#" data-key="book">RESERVAR</a>
             <div class="lang-dropdown">
-                <button class="lang-btn" id="langBtn">🇪🇸 ES ▾</button>
+                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾</button>
                 <div class="lang-menu" id="langMenu">
-                    <button data-lang="es">🇪🇸 Español</button>
-                    <button data-lang="en">🇺🇸 English</button>
+                    <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> Español</button>
+                    <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="20" alt="EN"> English</button>
                 </div>
             </div>
         </nav>
@@ -62,15 +62,21 @@ const translations = {
 const langBtn = document.getElementById('langBtn');
 const langMenu = document.getElementById('langMenu');
 
-langBtn.onclick = () => langMenu.classList.toggle('show');
+langBtn.onclick = (e) => {
+  e.stopPropagation();
+  langMenu.classList.toggle('show');
+};
 document.addEventListener('click', e => {
   if (!e.target.closest('.lang-dropdown')) langMenu.classList.remove('show');
 });
 
 langMenu.querySelectorAll('button').forEach(btn => {
-  btn.onclick = () => {
+  btn.onclick = (e) => {
+    e.stopPropagation();
     const lang = btn.getAttribute('data-lang');
-    langBtn.innerHTML = (lang === 'es'? '🇪🇸 ES ▾' : '🇺🇸 EN ▾');
+    langBtn.innerHTML = lang === 'es'
+     ? '<img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾'
+      : '<img src="https://flagcdn.com/w20/us.png" width="20" alt="EN"> EN ▾';
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-key]').forEach(el => {
       el.textContent = translations[lang][el.getAttribute('data-key')];
