@@ -8,7 +8,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, Helvetica, sans-serif; background: #fff; color: #333; }
 
-        /* HEADER CENTRADO */
         header {
             display: flex;
             justify-content: center;
@@ -29,7 +28,7 @@
         .nav-left a, .nav-right a {
             text-decoration: none;
             color: #555;
-            font-size: 13px;
+            font-size: 16px;
             letter-spacing: 1px;
             font-weight: 500;
             white-space: nowrap;
@@ -47,16 +46,12 @@
             margin: 0 30px;
             white-space: nowrap;
         }
-
-        /* HERO IMAGEN */
         .hero-image {
             width: 100%;
             height: 460px;
             background: url('banner.png') no-repeat center/cover;
             background-color: #e8f4f6;
         }
-
-        /* SECCION TURQUESA OSCURO */
         .hero-text {
             background: #0097B2;
             color: #fff;
@@ -76,12 +71,7 @@
             line-height: 1.6;
             color: #eaf6f8;
         }
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
         .btn {
             background: #fff;
             color: #0097B2;
@@ -95,23 +85,11 @@
             font-weight: 600;
         }
         .btn:hover { background: #e0f2f5; }
-
-        /* RESPONSIVE CELULAR */
         @media (max-width: 768px) {
-            header {
-                padding: 15px 15px;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            .logo {
-                order: -1;
-                width: 100%;
-                text-align: center;
-                font-size: 36px;
-                margin: 0 0 10px 0;
-            }
+            header { padding: 15px 15px; flex-wrap: wrap; gap: 15px; }
+            .logo { order: -1; width: 100%; text-align: center; font-size: 36px; margin: 0 0 10px 0; }
             .nav-left, .nav-right { gap: 14px; }
-            .nav-left a, .nav-right a { font-size: 11px; }
+            .nav-left a, .nav-right a { font-size: 13px; }
             .hero-image { height: 280px; }
             .hero-text { padding: 45px 20px; }
             .hero-text h1 { font-size: 28px; }
@@ -122,7 +100,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <nav class="nav-left">
             <a href="#" class="active">HOME</a>
@@ -136,9 +113,7 @@
             <a href="#">BOOK A SESSION</a>
         </nav>
     </header>
-
     <div class="hero-image"></div>
-
     <section class="hero-text">
         <h1>Grow Through What You Go Through</h1>
         <p>We believe mental health is a journey, not a destination. Whether you're seeking clarity, calm, or confidence, TimeNest offers personalized support for growth and healing.</p>
@@ -147,6 +122,5 @@
             <a href="#" class="btn">OUR SERVICES</a>
         </div>
     </section>
-
 </body>
 </html>
