@@ -20,10 +20,13 @@
         <nav class="nav-right">
             <a href="#" data-key="faq">PREGUNTAS</a>
             <a href="#" data-key="book">RESERVAR</a>
-            <select id="lang-switcher" style="padding:5px; border-radius:4px; border:1px solid #ccc;">
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-            </select>
+            <div class="lang-dropdown">
+                <button class="lang-btn" id="langBtn">🇪🇸 ES ▾</button>
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="es">🇪🇸 Español</button>
+                    <button data-lang="en">🇺🇸 English</button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -56,13 +59,24 @@ const translations = {
   }
 };
 
-document.getElementById('lang-switcher').addEventListener('change', function(e) {
-  const lang = e.target.value;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.getAttribute('data-key');
-    el.textContent = translations[lang][key];
-  });
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
+
+langBtn.onclick = () => langMenu.classList.toggle('show');
+document.addEventListener('click', e => {
+  if (!e.target.closest('.lang-dropdown')) langMenu.classList.remove('show');
+});
+
+langMenu.querySelectorAll('button').forEach(btn => {
+  btn.onclick = () => {
+    const lang = btn.getAttribute('data-lang');
+    langBtn.innerHTML = (lang === 'es'? '🇪🇸 ES ▾' : '🇺🇸 EN ▾');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-key]').forEach(el => {
+      el.textContent = translations[lang][el.getAttribute('data-key')];
+    });
+    langMenu.classList.remove('show');
+  };
 });
 </script>
 
