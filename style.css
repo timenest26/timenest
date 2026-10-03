@@ -137,18 +137,18 @@ header {
         gap: 10px;
         text-align: center;
     }
-   .logo { order: -1; font-size: 36px; }
-   .nav-left,.nav-right {
+  .logo { order: -1; font-size: 36px; }
+  .nav-left,.nav-right {
         justify-content: center;
         padding: 0;
         gap: 14px;
         flex-wrap: wrap;
     }
-   .nav-left a,.nav-right a { font-size: 13px; }
-   .hero-image { height: 280px; }
-   .hero-text { padding: 45px 20px; }
-   .hero-text h1 { font-size: 28px; }
-   .hero-text p { font-size: 15px; }
-   .btn { padding: 12px 24px; width: 100%; max-width: 280px; }
-   .buttons { flex-direction: column; align-items: center; }
+  .nav-left a,.nav-right a { font-size: 13px; }
+  .hero-image { height: 280px; }
+  .hero-text { padding: 45px 20px; }
+  .hero-text h1 { font-size: 28px; }
+  .hero-text p { font-size: 15px; }
+  .btn { padding: 12px 24px; width: 100%; max-width: 280px; }
+  .buttons { flex-direction: column; align-items: center; }
 }
