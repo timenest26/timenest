@@ -13,13 +13,11 @@
         <nav class="nav-left">
             <a href="#" class="active" data-key="home">INICIO</a>
             <a href="#" data-key="about">NOSOTROS ▾</a>
-            <a href="#" data-key="services">SERVICIOS</a>
             <a href="#" data-key="blog">BLOG</a>
         </nav>
         <div class="logo">TimeNest</div>
         <nav class="nav-right">
             <a href="#" data-key="faq">PREGUNTAS</a>
-            <a href="#" data-key="book">RESERVAR</a>
             <div class="lang-dropdown">
                 <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾</button>
                 <div class="lang-menu" id="langMenu">
@@ -44,15 +42,15 @@
 <script>
 const translations = {
   es: {
-    home: "INICIO", about: "NOSOTROS ▾", services: "SERVICIOS", blog: "BLOG",
-    faq: "PREGUNTAS", book: "RESERVAR",
+    home: "INICIO", about: "NOSOTROS ▾", blog: "BLOG",
+    faq: "PREGUNTAS",
     title: "Crece a través de lo que atraviesas",
     subtitle: "Creemos que la salud mental es un viaje, no un destino. Ya sea que busques claridad, calma o confianza, TimeNest ofrece apoyo personalizado para tu crecimiento y sanación.",
     btn1: "APRENDE MÁS", btn2: "NUESTROS SERVICIOS"
   },
   en: {
-    home: "HOME", about: "ABOUT ▾", services: "SERVICES", blog: "BLOG",
-    faq: "F.A.Q", book: "BOOK A SESSION",
+    home: "HOME", about: "ABOUT ▾", blog: "BLOG",
+    faq: "F.A.Q",
     title: "Grow Through What You Go Through",
     subtitle: "We believe mental health is a journey, not a destination. Whether you're seeking clarity, calm, or confidence, TimeNest offers personalized support for growth and healing.",
     btn1: "LEARN MORE", btn2: "OUR SERVICES"
@@ -75,7 +73,7 @@ langMenu.querySelectorAll('button').forEach(btn => {
     e.stopPropagation();
     const lang = btn.getAttribute('data-lang');
     langBtn.innerHTML = lang === 'es'
-     ? '<img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾'
+    ? '<img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾'
       : '<img src="https://flagcdn.com/w20/us.png" width="20" alt="EN"> EN ▾';
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-key]').forEach(el => {
