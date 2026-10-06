@@ -8,9 +8,10 @@
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
-
     <header>
-        <nav class="nav-left">
+        <div class="logo">TimeNest</div>
+
+        <nav class="nav-center">
             <a href="#" class="active" data-key="home">INICIO</a>
             <div class="dropdown">
                 <a href="#" class="drop-btn" data-key="about">NOSOTROS ▾</a>
@@ -21,72 +22,36 @@
                 </div>
             </div>
             <a href="#" data-key="blog">BLOG</a>
-        </nav>
-
-        <div class="logo">TimeNest</div>
-
-        <nav class="nav-right">
             <a href="#" data-key="faq">PREGUNTAS</a>
-            <!-- IDIOMA AHORA A LA DERECHA AL LADO DE PREGUNTAS -->
-            <div class="lang-dropdown">
-                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/16x12/es.png" width="20"> ES ▾</button>
-                <div class="lang-menu" id="langMenu">
-                    <button data-lang="es"><img src="https://flagcdn.com/16x12/es.png" width="20"> Español</button>
-                    <button data-lang="en"><img src="https://flagcdn.com/16x12/us.png" width="20"> English</button>
-                </div>
-            </div>
         </nav>
+
+        <div class="lang-dropdown">
+            <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/16x12/es.png" width="20"> ES ▾</button>
+            <div class="lang-menu" id="langMenu">
+                <button data-lang="es"><img src="https://flagcdn.com/16x12/es.png" width="20"> Español</button>
+                <button data-lang="en"><img src="https://flagcdn.com/16x12/us.png" width="20"> English</button>
+            </div>
+        </div>
     </header>
 
     <div class="hero-image"></div>
-
     <section class="hero-text">
         <h1 data-key="title">Plan digital enfocado en la infancia</h1>
         <p data-key="subtitle">El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.</p>
-        <div class="buttons">
-            <a href="#" class="btn" data-key="btn1">MÁS INFORMACIÓN</a>
-        </div>
+        <div class="buttons"><a href="#" class="btn" data-key="btn1">MÁS INFORMACIÓN</a></div>
     </section>
 
 <script>
 const translations = {
-  es: {
-    home: "INICIO", about: "NOSOTROS ▾", blog: "BLOG", faq: "PREGUNTAS",
-    about1: "Sobre nosotros", about2: "Nuestro equipo", about3: "Nuestra misión",
-    title: "Plan digital enfocado en la infancia",
-    subtitle: "El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.",
-    btn1: "MÁS INFORMACIÓN"
-  },
-  en: {
-    home: "HOME", about: "ABOUT ▾", blog: "BLOG", faq: "F.A.Q",
-    about1: "About us", about2: "Our team", about3: "Our mission",
-    title: "Digital plan focused on early childhood",
-    subtitle: "Screen use affects children in early childhood, so on this page you will find help to make its effect positive.",
-    btn1: "MORE INFORMATION"
-  }
+  es: { home:"INICIO", about:"NOSOTROS ▾", blog:"BLOG", faq:"PREGUNTAS", about1:"Sobre nosotros", about2:"Nuestro equipo", about3:"Nuestra misión", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" },
+  en: { home:"HOME", about:"ABOUT ▾", blog:"BLOG", faq:"F.A.Q", about1:"About us", about2:"Our team", about3:"Our mission", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" }
 };
-
-const langBtn = document.getElementById('langBtn');
-const langMenu = document.getElementById('langMenu');
-const aboutBtn = document.querySelector('.drop-btn');
-const aboutMenu = document.getElementById('aboutMenu');
-
-langBtn.onclick = (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); aboutMenu.classList.remove('show'); };
-aboutBtn.onclick = (e) => { e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); langMenu.classList.remove('show'); };
-
-document.addEventListener('click', () => {
-  langMenu.classList.remove('show');
-  aboutMenu.classList.remove('show');
-});
-
-langMenu.querySelectorAll('button').forEach(btn => {
-  btn.onclick = (e) => {
-    e.stopPropagation();
-    const lang = btn.dataset.lang;
-    langBtn.innerHTML = lang === 'es'? '<img src="https://flagcdn.com/16x12/es.png" width="20"> ES ▾' : '<img src="https://flagcdn.com/16x12/us.png" width="20"> EN ▾';
-    document.querySelectorAll('[data-key]').forEach(el => el.textContent = translations[lang][el.dataset.key]);
-    langMenu.classList.remove('show');
-  };
+const langBtn=document.getElementById('langBtn'), langMenu=document.getElementById('langMenu'), aboutBtn=document.querySelector('.drop-btn'), aboutMenu=document.getElementById('aboutMenu');
+langBtn.onclick=(e)=>{e.stopPropagation(); langMenu.classList.toggle('show'); aboutMenu.classList.remove('show');};
+aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); langMenu.classList.remove('show');};
+document.addEventListener('click',()=>{langMenu.classList.remove('show'); aboutMenu.classList.remove('show');});
+langMenu.querySelectorAll('button').forEach(btn=>{
+  btn.onclick=(e)=>{e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML=lang==='es'?'<img src="https://flagcdn.com/16x12/es.png" width="20"> ES ▾':'<img src="https://flagcdn.com/16x12/us.png" width="20"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); langMenu.classList.remove('show');}
 });
 </script>
 </body>
