@@ -27,10 +27,10 @@
             <a href="#" data-key="faq">PREGUNTAS</a>
 
             <div class="lang-dropdown">
-                <button class="lang-btn" id="langBtn">ES ▾</button>
+                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾</button>
                 <div class="lang-menu" id="langMenu">
-                    <button data-lang="es">ES - Español</button>
-                    <button data-lang="en">EN - English</button>
+                    <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES - Español</button>
+                    <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN - English</button>
                 </div>
             </div>
         </nav>
@@ -53,7 +53,17 @@ langBtn.onclick=(e)=>{e.stopPropagation(); langMenu.classList.toggle('show'); ab
 aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); langMenu.classList.remove('show');};
 document.addEventListener('click',()=>{langMenu.classList.remove('show'); aboutMenu.classList.remove('show');});
 langMenu.querySelectorAll('button').forEach(btn=>{
-  btn.onclick=(e)=>{e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML=lang==='es'?'ES ▾':'EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); langMenu.classList.remove('show');}
+  btn.onclick=(e)=>{
+    e.stopPropagation();
+    const lang=btn.dataset.lang;
+    if(lang==='es'){
+      langBtn.innerHTML='<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾';
+    }else{
+      langBtn.innerHTML='<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾';
+    }
+    document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]);
+    langMenu.classList.remove('show');
+  }
 });
 </script>
 </body>
