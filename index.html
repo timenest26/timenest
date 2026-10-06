@@ -21,30 +21,7 @@
                     <a href="#" data-key="about3">Nuestra misión</a>
                 </div>
             </div>
-            <div class="dropdown blog-wrapper">
-                <a href="#" class="drop-btn" id="blogBtn" data-key="blog">BLOG ▾</a>
-                <div class="blog-mega-menu" id="blogMenu">
-                    <h2 class="reco-title">RECOMENDACIONES</h2>
-                    <div class="reco-grid">
-                        <div class="reco-card">
-                            <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6" alt="reco1" class="reco-img">
-                            <p class="reco-text">Evitar el uso de dispositivos electrónicos durante los momentos de convivencia familiar, como las comidas u otras actividades sociales.</p>
-                        </div>
-                        <div class="reco-card">
-                            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30" alt="reco2" class="reco-img">
-                            <p class="reco-text">Fomentar actividades alternativas como el deporte, el juego al aire libre y la lectura</p>
-                        </div>
-                        <div class="reco-card">
-                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" alt="reco3" class="reco-img">
-                            <p class="reco-text">Establecer horarios claros y límites de tiempo para el uso de pantallas según la edad del niño.</p>
-                        </div>
-                        <div class="reco-card">
-                            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74" alt="reco4" class="reco-img">
-                            <p class="reco-text">Acompañar y supervisar el contenido que ven los niños, priorizando contenido educativo y de calidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="#recomendaciones" data-key="blog">BLOG</a>
             <a href="#" data-key="faq">PREGUNTAS</a>
             <div class="lang-dropdown">
                 <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾</button>
@@ -60,24 +37,68 @@
     <section class="hero-text">
         <h1 data-key="title">Plan digital enfocado en la infancia</h1>
         <p data-key="subtitle">El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.</p>
-        <div class="buttons"><a href="#" class="btn" data-key="btn1">MÁS INFORMACIÓN</a></div>
+        <div class="buttons"><a href="#recomendaciones" class="btn" data-key="btn1">MÁS INFORMACIÓN</a></div>
+    </section>
+
+    <!-- AQUI VA LA SECCION A DONDE TE LLEVA BLOG -->
+    <section id="recomendaciones" class="reco-section">
+        <h2 class="reco-title">RECOMENDACIONES</h2>
+        <div class="reco-grid">
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6" alt="reco1" class="reco-img">
+                <p class="reco-text">Evitar el uso de dispositivos electrónicos durante los momentos de convivencia familiar, como las comidas u otras actividades sociales.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30" alt="reco2" class="reco-img">
+                <p class="reco-text">Fomentar actividades alternativas como el deporte, el juego al aire libre y la lectura</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9" alt="reco3" class="reco-img">
+                <p class="reco-text">Dar el ejemplo como adultos, reduciendo el tiempo de pantallas frente a los niños.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74" alt="reco4" class="reco-img">
+                <p class="reco-text">Establecer horarios claros y límites de tiempo para el uso de pantallas según la edad del niño.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" alt="reco5" class="reco-img">
+                <p class="reco-text">Acompañar y supervisar el contenido que ven los niños, priorizando contenido educativo y de calidad.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1607211851821-8be3cd6146f0" alt="reco6" class="reco-img">
+                <p class="reco-text">Utilizar herramientas de control parental y crear zonas libres de tecnología dentro del hogar.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1522771930-78848d9293e4" alt="reco7" class="reco-img">
+                <p class="reco-text">Promover el descanso adecuado, evitando pantallas al menos una hora antes de dormir.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" alt="reco8" class="reco-img">
+                <p class="reco-text">Realizar actividades creativas en familia como dibujar, pintar o armar manualidades.</p>
+            </div>
+            <div class="reco-card">
+                <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a" alt="reco9" class="reco-img">
+                <p class="reco-text">Conversar sobre lo que ven en internet y enseñarles a identificar contenido seguro.</p>
+            </div>
+        </div>
     </section>
 
 <script>
-const translations = {
-  es: { about:"NOSOTROS ▾", blog:"BLOG ▾", faq:"PREGUNTAS", about1:"Sobre nosotros", about3:"Nuestra misión", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" },
-  en: { about:"ABOUT ▾", blog:"BLOG ▾", faq:"F.A.Q", about1:"About us", about3:"Our mission", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" }
-};
+const translations = { es: { about:"NOSOTROS ▾", blog:"BLOG", faq:"PREGUNTAS", about1:"Sobre nosotros", about3:"Nuestra misión", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" }, en: { about:"ABOUT ▾", blog:"BLOG", faq:"F.A.Q", about1:"About us", about3:"Our mission", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" } };
 const langBtn=document.getElementById('langBtn'), langMenu=document.getElementById('langMenu');
 const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
-const blogBtn=document.getElementById('blogBtn'), blogMenu=document.getElementById('blogMenu');
-function closeAll(){ langMenu.classList.remove('show'); aboutMenu.classList.remove('show'); blogMenu.classList.remove('show'); }
+function closeAll(){ langMenu.classList.remove('show'); aboutMenu.classList.remove('show'); }
 langBtn.onclick=(e)=>{e.stopPropagation(); const isOpen=langMenu.classList.contains('show'); closeAll(); if(!isOpen) langMenu.classList.add('show'); };
 aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); const isOpen=aboutMenu.classList.contains('show'); closeAll(); if(!isOpen) aboutMenu.classList.add('show'); };
-blogBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); const isOpen=blogMenu.classList.contains('show'); closeAll(); if(!isOpen) blogMenu.classList.add('show'); };
 document.addEventListener('click',closeAll);
-langMenu.querySelectorAll('button').forEach(btn=>{
-  btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); closeAll(); }
+langMenu.querySelectorAll('button').forEach(btn=>{ btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); closeAll(); } });
+
+// Scroll suave al hacer clic en BLOG
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
 });
 </script>
 </body>
