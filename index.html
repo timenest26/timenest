@@ -9,19 +9,10 @@
 </head>
 <body>
     <header>
-        <div class="header-top">
-            <a href="#" class="brand">
-                <img src="logo.png" alt="Niñez Conectada" class="logo-img">
-                <span class="brand-name">TimeNest</span>
-            </a>
-            <div class="lang-dropdown">
-                <button class="lang-btn" id="langBtn">🇪🇸 ES ▾</button>
-                <div class="lang-menu" id="langMenu">
-                    <button data-lang="es">🇪🇸 Español</button>
-                    <button data-lang="en">🇺🇸 English</button>
-                </div>
-            </div>
-        </div>
+        <a href="#" class="brand">
+            <img src="logo.png" alt="Niñez Conectada" class="logo-img">
+            <span class="brand-name">TimeNest</span>
+        </a>
 
         <nav class="nav-center">
             <div class="dropdown">
@@ -34,6 +25,14 @@
             </div>
             <a href="#" data-key="blog">BLOG</a>
             <a href="#" data-key="faq">PREGUNTAS</a>
+
+            <div class="lang-dropdown">
+                <button class="lang-btn" id="langBtn">ES ▾</button>
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="es">ES - Español</button>
+                    <button data-lang="en">EN - English</button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -54,7 +53,7 @@ langBtn.onclick=(e)=>{e.stopPropagation(); langMenu.classList.toggle('show'); ab
 aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); langMenu.classList.remove('show');};
 document.addEventListener('click',()=>{langMenu.classList.remove('show'); aboutMenu.classList.remove('show');});
 langMenu.querySelectorAll('button').forEach(btn=>{
-  btn.onclick=(e)=>{e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML=lang==='es'?'🇪🇸 ES ▾':'🇺🇸 EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); langMenu.classList.remove('show');}
+  btn.onclick=(e)=>{e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML=lang==='es'?'ES ▾':'EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); langMenu.classList.remove('show');}
 });
 </script>
 </body>
