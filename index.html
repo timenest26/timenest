@@ -24,15 +24,17 @@
         </nav>
         <div class="logo">TimeNest</div>
         <nav class="nav-right">
-            <a href="#" data-key="faq">PREGUNTAS</a>
-            <div class="lang-dropdown">
-                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾</button>
-                <div class="lang-menu" id="langMenu">
-                    <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> Español</button>
-                    <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="20" alt="EN"> English</button>
-                </div>
-            </div>
+            <a href="#" data-key="faq" class="faq-centered">PREGUNTAS</a>
         </nav>
+
+        <!-- IDIOMA MOVIDO A ESQUINA DERECHA -->
+        <div class="lang-dropdown" id="langCorner">
+            <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> ES ▾</button>
+            <div class="lang-menu" id="langMenu">
+                <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="20" alt="ES"> Español</button>
+                <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="20" alt="EN"> English</button>
+            </div>
+        </div>
     </header>
 
     <div class="hero-image"></div>
@@ -80,7 +82,6 @@ langMenu.querySelectorAll('button').forEach(btn => {
     langMenu.classList.remove('show');
   };
 });
-
 document.querySelector('.drop-btn').onclick = (e) => {
   e.preventDefault(); e.stopPropagation();
   document.querySelector('.dropdown-content').classList.toggle('show');
