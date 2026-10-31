@@ -15,13 +15,16 @@
         </a>
         <nav class="nav-center">
             <div class="dropdown">
-                <a href="#" style="color:#0097B2; font-weight:700;">NOSOTROS ▾</a>
+                <a href="#" class="drop-btn" id="aboutBtn">NOSOTROS ▾</a>
+                <div class="dropdown-content" id="aboutMenu">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="mision.html">Nuestra Misión</a>
+                </div>
             </div>
             <a href="blog.html">BLOG</a>
             <a href="#">PREGUNTAS</a>
         </nav>
     </header>
-
     <section class="nosotros-section">
         <h1>Nuestra Misión</h1>
         <div class="nosotros-content">
@@ -32,9 +35,14 @@
                 Nuestra misión es generar conciencia sobre el uso responsable de las pantallas en la primera infancia, entregando información validada y herramientas prácticas para familias y educadores.
             </p>
             <p>
-                Buscamos ser un puente entre la investigación académica y la vida cotidiana, promoviendo hábitos saludables que fortalezcan el desarrollo cognitivo, emocional y social de los niños y niñas, reduciendo los riesgos asociados al uso excesivo de la tecnología.
+                Buscamos ser un puente entre la investigación académica y la vida cotidiana, promoviendo hábitos saludables que fortalezcan el desarrollo cognitivo, emocional y social de los niños y niñas.
             </p>
         </div>
     </section>
+<script>
+const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
+aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); };
+document.addEventListener('click',()=>{ aboutMenu.classList.remove('show'); });
+</script>
 </body>
 </html>
