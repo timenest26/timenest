@@ -17,7 +17,8 @@
             <div class="dropdown">
                 <a href="#" class="drop-btn" id="aboutBtn" data-key="about">NOSOTROS ▾</a>
                 <div class="dropdown-content" id="aboutMenu">
-                    <a href="nosotros.html" data-key="about1">Sobre nosotros</a>
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="mision.html">Nuestra Misión</a>
                 </div>
             </div>
             <a href="blog.html" data-key="blog">BLOG</a>
@@ -39,8 +40,8 @@
     </section>
 <script>
 const translations = {
-  es: { about:"NOSOTROS ▾", blog:"BLOG", faq:"PREGUNTAS", about1:"Sobre nosotros", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" },
-  en: { about:"ABOUT ▾", blog:"BLOG", faq:"F.A.Q", about1:"About us", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" }
+  es: { about:"NOSOTROS ▾", blog:"BLOG", faq:"PREGUNTAS", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" },
+  en: { about:"ABOUT ▾", blog:"BLOG", faq:"F.A.Q", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" }
 };
 const langBtn=document.getElementById('langBtn'), langMenu=document.getElementById('langMenu');
 const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
@@ -49,7 +50,7 @@ langBtn.onclick=(e)=>{e.stopPropagation(); const isOpen=langMenu.classList.conta
 aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); const isOpen=aboutMenu.classList.contains('show'); closeAll(); if(!isOpen) aboutMenu.classList.add('show'); };
 document.addEventListener('click',closeAll);
 langMenu.querySelectorAll('button').forEach(btn=>{
-  btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>el.textContent=translations[lang][el.dataset.key]); closeAll(); }
+  btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>{ if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key]; }); closeAll(); }
 });
 </script>
 </body>
