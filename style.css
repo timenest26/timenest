@@ -31,12 +31,9 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 .reco-card:hover .reco-text{color:#0097B2}
 .reco-img{width:180px;height:130px;object-fit:cover;flex-shrink:0;display:block;background:#f0f0f0}
 .reco-text{font-size:17px;line-height:1.35;color:#222;max-width:260px}
-.nosotros-section{max-width:900px;margin:0 auto;padding:50px 30px 80px}
-.nosotros-section h1{font-family:'Georgia',serif;font-size:36px;color:#0097B2;margin-bottom:30px}
-.nosotros-content p{font-size:17px;line-height:1.8;color:#333;margin-bottom:20px;text-align:justify}
-.nosotros-box{margin-top:40px;background:#f0f9fa;border-left:4px solid #0097B2;padding:24px 28px;border-radius:6px}
-.nosotros-box h2{font-size:22px;color:#0097B2;margin-bottom:10px}
-.nosotros-box p{font-size:16px;color:#444;line-height:1.6}
+.nosotros-section{max-width:900px;margin:0 auto;padding:50px 40px 80px}
+.nosotros-section h1{font-family:Arial,sans-serif;font-size:28px;font-weight:700;color:#0E8FA8;margin-bottom:28px}
+.nosotros-content p{font-size:16px;line-height:1.7;color:#333;margin-bottom:20px;text-align:left}
 @media (max-width:1100px){.reco-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:900px){
  header{flex-wrap:wrap;padding:10px 12px}
@@ -48,6 +45,6 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 .reco-text{font-size:15px;max-width:none}
 .hero-image{height:280px}.hero-text h1{font-size:28px}
 .nosotros-section{padding:30px 16px 50px}
-.nosotros-section h1{font-size:28px}
-.nosotros-content p{font-size:15px}
+.nosotros-section h1{font-size:24px}
+.nosotros-content p{font-size:14px}
 }
