@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimeNest - Niñez Conectada</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <title>TimeNest</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header>
         <a href="index.html" class="brand">
-            <img src="logo.png" alt="TimeNest" class="logo-img">
+            <img src="logo.png" alt="Niñez Conectada" class="logo-img">
             <span class="brand-name">TimeNest</span>
         </a>
         <nav class="nav-center">
@@ -22,29 +22,37 @@
                 </div>
             </div>
             <a href="blog.html">BLOG</a>
+            <a href="#">PREGUNTAS</a>
             <a href="preguntas.html">PREGUNTAS</a>
-            <a href="mas-informacion.html">MÁS INFORMACIÓN</a>
+            <div class="lang-dropdown">
+                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾</button>
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES - Español</button>
+                    <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN - English</button>
+                </div>
+            </div>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Uso saludable de pantallas en la infancia</h1>
-            <p>Guías, consejos y herramientas para familias. Fomentamos el juego, la convivencia y el tiempo de calidad lejos de las pantallas.</p>
-            <div class="hero-btns">
-                <a href="mas-informacion.html" class="btn-primary">Más información</a>
-                <a href="blog.html" class="btn-secondary">Ver recomendaciones</a>
-            </div>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?q=80&w=700" alt="Niños jugando">
-        </div>
+    <div class="hero-image"></div>
+    <section class="hero-text">
+        <h1 data-key="title">Plan digital enfocado en la infancia</h1>
+        <p data-key="subtitle">El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.</p>
+        <div class="buttons"><a href="mas-informacion.html" class="btn" data-key="btn1">MÁS INFORMACIÓN</a></div>
     </section>
-
 <script>
+const translations = {
+  es: { about:"NOSOTROS ▾", blog:"BLOG", faq:"PREGUNTAS", title:"Plan digital enfocado en la infancia", subtitle:"El uso de pantallas afecta a los niños de primera infancia, por lo que en esta página encontrarás una ayuda para que el efecto de este sea positivo.", btn1:"MÁS INFORMACIÓN" },
+  en: { about:"ABOUT ▾", blog:"BLOG", faq:"F.A.Q", title:"Digital plan focused on early childhood", subtitle:"Screen use affects children in early childhood, so on this page you will find help to make its effect positive.", btn1:"MORE INFORMATION" }
+};
+const langBtn=document.getElementById('langBtn'), langMenu=document.getElementById('langMenu');
 const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
-aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); };
-document.addEventListener('click',()=>{ aboutMenu.classList.remove('show'); });
+function closeAll(){ langMenu.classList.remove('show'); aboutMenu.classList.remove('show'); }
+langBtn.onclick=(e)=>{e.stopPropagation(); const isOpen=langMenu.classList.contains('show'); closeAll(); if(!isOpen) langMenu.classList.add('show'); };
+aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); const isOpen=aboutMenu.classList.contains('show'); closeAll(); if(!isOpen) aboutMenu.classList.add('show'); };
+document.addEventListener('click',closeAll);
+langMenu.querySelectorAll('button').forEach(btn=>{
+  btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="18" height="13" style="border-radius:2px"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="18" height="13" style="border-radius:2px"> EN ▾'; document.querySelectorAll('[data-key]').forEach(el=>{ if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key]; }); closeAll(); }
+});
 </script>
 </body>
 </html>
