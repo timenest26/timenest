@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios y Límites - TimeNest</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body style="background:#FFFBF5;">
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Niñez Conectada" class="logo-img">
+            <span class="brand-name">TimeNest</span>
+        </a>
+        <nav class="nav-center">
+            <div class="dropdown">
+                <a href="#" class="drop-btn" id="aboutBtn">NOSOTROS ▾</a>
+                <div class="dropdown-content" id="aboutMenu">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="mision.html">Nuestra Misión</a>
+                </div>
+            </div>
+            <a href="blog.html" style="color:#0097B2; font-weight:700;">BLOG</a>
+            <a href="#">PREGUNTAS</a>
+            <div class="lang-dropdown">
+                <button class="lang-btn" id="langBtn"><img src="https://flagcdn.com/w20/es.png" width="16"> ES ▾</button>
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="es"><img src="https://flagcdn.com/w20/es.png" width="16"> ES - Español</button>
+                    <button data-lang="en"><img src="https://flagcdn.com/w20/us.png" width="16"> EN - English</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <section class="catalog-section" style="text-align:left; max-width:900px; margin:0 auto;">
+        <a href="blog.html" style="color:#0097B2; text-decoration:none; font-size:14px; font-weight:600;">← Volver a Recomendaciones</a>
+        
+        <div style="text-align:left; margin-top:20px; margin-bottom:30px;">
+            <h1 style="font-family:'Georgia',serif; font-size:34px; font-weight:800; color:#1a1a1a; line-height:1.2; margin-bottom:10px;">Establecer horarios claros y límites de tiempo para el uso de pantallas según la edad del niño</h1>
+        </div>
+
+        <!-- IMAGEN EN SU PROPIO CUADRO -->
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=900" style="width:100%; height:420px; object-fit:cover; border-radius:14px; display:block; margin:0 auto 28px; box-shadow:0 6px 22px rgba(0,0,0,0.08);">
+
+        <!-- TEXTO EN OTRO CUADRO BLANCO SEPARADO -->
+        <div style="background:#fff; border-radius:14px; padding:30px 32px; box-shadow:0 6px 22px rgba(0,0,0,0.06);">
+            <p style="font-size:19px; line-height:1.8; color:#222; margin-bottom:24px;">
+                Establecer rutinas consistentes ayuda a que los niños anticipen cuándo pueden usar pantallas y cuándo es momento de otras actividades. La clave es ser claros, constantes y dar el ejemplo.
+            </p>
+
+            <h3 style="font-family:'Georgia',serif; font-size:20px; font-weight:700; color:#0097B2; margin:0 0 14px;">Recomendaciones por edad</h3>
+            <ul style="list-style:none; padding:0;">
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span><strong>0 a 2 años:</strong> Evitar el uso de pantallas, excepto videollamadas con familiares.</li>
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span><strong>2 a 5 años:</strong> Máximo 1 hora al día, siempre con contenido educativo y acompañado de un adulto.</li>
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span><strong>6 años en adelante:</strong> Establecer horarios fijos, sin pantallas durante comidas, 1 hora antes de dormir ni al despertar.</li>
+            </ul>
+
+            <h3 style="font-family:'Georgia',serif; font-size:20px; font-weight:700; color:#0097B2; margin:28px 0 14px;">Cómo aplicarlo en casa</h3>
+            <ul style="list-style:none; padding:0;">
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span>Crear un horario visual pegado en el refrigerador con los momentos de pantalla y sin pantalla.</li>
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span>Usar temporizador o alarma para que el final no sea una sorpresa.</li>
+                <li style="font-size:16px; line-height:1.6; color:#333; margin-bottom:12px; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#0097B2;">•</span>Acordar las reglas en familia y cumplirlas todos, incluidos los adultos.</li>
+            </ul>
+        </div>
+    </section>
+
+<script>
+const langBtn=document.getElementById('langBtn'), langMenu=document.getElementById('langMenu');
+const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
+function closeAll(){ if(langMenu) langMenu.classList.remove('show'); if(aboutMenu) aboutMenu.classList.remove('show'); }
+if(langBtn){
+  langBtn.onclick=(e)=>{e.stopPropagation(); const isOpen=langMenu.classList.contains('show'); closeAll(); if(!isOpen) langMenu.classList.add('show'); };
+  langMenu.querySelectorAll('button').forEach(btn=>{
+    btn.onclick=(e)=>{ e.stopPropagation(); const lang=btn.dataset.lang; langBtn.innerHTML= lang==='es'? '<img src="https://flagcdn.com/w20/es.png" width="16"> ES ▾' : '<img src="https://flagcdn.com/w20/us.png" width="16"> EN ▾'; closeAll(); }
+  });
+}
+if(aboutBtn){ aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); const isOpen=aboutMenu.classList.contains('show'); closeAll(); if(!isOpen) aboutMenu.classList.add('show'); }; }
+document.addEventListener('click',closeAll);
+</script>
+</body>
+</html>
