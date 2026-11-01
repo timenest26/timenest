@@ -3,23 +3,13 @@ html{scroll-behavior:smooth}
 body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#333}
 
 /* HEADER */
-header{display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000;padding:14px 28px}
+header{display:flex;justify-content:space-between;align-items:center;background:#FFFBF5;border-bottom:1px solid #f0ebe0;position:sticky;top:0;z-index:1000;padding:14px 28px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none!important}
 .logo-img{width:58px;height:58px;object-fit:contain;border-radius:50%;display:block}
 .brand-name{font-family:'Georgia',serif;font-size:38px;color:#0097B2;font-weight:700;line-height:58px;text-decoration:none!important}
 .nav-center{display:flex;gap:28px;align-items:center}
 .nav-center a,.drop-btn{text-decoration:none;color:#555;font-size:17px;letter-spacing:1px;font-weight:500;background:none;border:none;cursor:pointer}
 .nav-center a:hover,.drop-btn:hover{color:#0097B2}
-
-/* IDIOMA */
-.lang-dropdown{position:relative;margin-left:8px}
-.lang-btn{background:#fff;border:1px solid #ddd;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:15px;color:#555;display:flex;align-items:center;gap:6px}
-.lang-menu{display:none;position:absolute;right:0;top:40px;background:#fff;border:1px solid #eee;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.15);min-width:165px;z-index:1200;overflow:hidden}
-.lang-menu.show{display:block}
-.lang-menu button{width:100%;background:none;border:none;padding:10px 14px;text-align:left;cursor:pointer;font-size:14px;display:flex;align-items:center;gap:8px}
-.lang-menu button:hover{background:#f0f9fa}
-
-/* DROPDOWN NOSOTROS */
 .dropdown{position:relative}
 .dropdown-content{display:none;position:absolute;left:50%;transform:translateX(-50%);top:38px;background:#fff;min-width:190px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.15);border:1px solid #eee;z-index:1200;overflow:hidden}
 .dropdown-content.show{display:block}
@@ -33,63 +23,76 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 .hero-text p{max-width:820px;margin:0 auto 35px;font-size:18px;line-height:1.6;color:#eaf6f8}
 .btn{background:#fff;color:#0097B2;padding:14px 34px;border-radius:4px;font-size:14px;font-weight:700;text-decoration:none}
 
-/* BLOG - FORMATO NUEVO VERTICAL COMO TU FOTO */
-.reco-section{background:#fff;padding:50px 40px 60px}
-.reco-title{font-size:22px;font-weight:800;letter-spacing:0.5px;margin-bottom:32px;color:#111; font-family:Arial, sans-serif; text-transform:uppercase;}
-.reco-grid-vertical{
-  display:grid;
-  grid-template-columns: 165px 165px;
-  gap:50px 80px;
-  max-width:900px;
-}
-.reco-card-v{
-  text-decoration:none;
-  color:#222;
-  display:block;
-  cursor:pointer;
-}
-.reco-card-v:hover .reco-text-v{
-  color:#0097B2;
-}
-.reco-img-v{
-  width:165px;
-  height:165px;
-  object-fit:cover;
-  display:block;
-  background:#f0f0f0;
-}
-.reco-text-v{
-  margin-top:12px;
-  font-size:14px;
-  line-height:1.35;
-  font-family:Arial, sans-serif;
-  max-width:165px;
-  color:#222;
-}
-
 /* NOSOTROS Y MISION */
-.nosotros-section{max-width:900px;margin:0 auto;padding:50px 40px 80px}
-.nosotros-section h1{font-family:Arial,sans-serif;font-size:26px;font-weight:700;color:#111;margin-bottom:28px; text-transform:uppercase;}
+.nosotros-section{max-width:900px;margin:0 auto;padding:50px 40px 80px; background:#fff;}
+.nosotros-section h1{font-family:'Georgia',serif;font-size:28px;font-weight:700;color:#111;margin-bottom:28px;}
 .nosotros-content p{font-size:15px;line-height:1.7;color:#333;margin-bottom:20px;text-align:left}
 
-/* RESPONSIVE */
-@media (max-width:1100px){
-  .reco-grid-vertical{grid-template-columns: 165px 165px; gap:40px 60px;}
+/* BLOG CATALOGO ESTILO 5CM - CENTRADO */
+.catalog-section{background:#FFFBF5; padding:50px 20px 80px; text-align:center;}
+.catalog-title{font-family:'Georgia',serif; font-size:32px; font-weight:800; color:#1a1a1a; margin-bottom:8px;}
+.catalog-subtitle{font-size:14px; color:#8a8a8a; margin-bottom:40px; font-family:Arial, sans-serif;}
+.catalog-grid{
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+  max-width:1100px;
+  margin:0 auto;
+}
+.catalog-card{
+  background:#fff;
+  width:260px;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  padding:14px 14px 18px;
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.catalog-card:hover{transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+.catalog-img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  background:#f5f0e8;
+}
+.catalog-card-title{
+  font-family:'Georgia',serif;
+  font-size:16px;
+  font-weight:700;
+  color:#1a1a1a;
+  margin-top:18px;
+  margin-bottom:4px;
+}
+.catalog-card-desc{
+  font-size:14px;
+  color:#222;
+  font-weight:600;
+  margin-bottom:16px;
+}
+.catalog-btn{
+  background:#F5F0E8;
+  border:1px solid #eee7d6;
+  color:#333;
+  padding:8px 22px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
 }
 
 @media (max-width:900px){
  header{flex-wrap:wrap;padding:10px 12px}
  .logo-img{width:42px;height:42px}.brand-name{font-size:28px;line-height:42px}
  .nav-center{width:100%;justify-content:center;gap:16px;padding-top:8px;border-top:1px solid #f5f5f5;flex-wrap:wrap}
- .reco-section{padding:24px 16px 40px}
  .hero-image{height:280px}.hero-text h1{font-size:28px}
  .nosotros-section{padding:30px 16px 50px}
- .nosotros-section h1{font-size:22px}
- .nosotros-content p{font-size:14px}
-}
-
-@media (max-width:500px){
-  .reco-grid-vertical{grid-template-columns: 1fr 1fr; gap:20px 16px;}
-  .reco-img-v{width:100%; height:140px;}
-  .reco-text-v{max-width:100%; font-size:13px;}
+ .catalog-grid{gap:16px}
+ .catalog-card{width:165px; padding:10px;}
+ .catalog-img{height:140px;}
+ .catalog-title{font-size:26px;}
 }
