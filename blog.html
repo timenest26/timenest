@@ -25,27 +25,34 @@
             <a href="#">PREGUNTAS</a>
         </nav>
     </header>
+
     <section class="reco-section">
         <h2 class="reco-title">RECOMENDACIONES</h2>
-        <div class="reco-grid">
-            <div class="reco-card">
-                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=400" class="reco-img">
-                <p class="reco-text">Evitar el uso de dispositivos electrónicos durante los momentos de convivencia familiar, como las comidas u otras actividades sociales.</p>
-            </div>
-            <div class="reco-card">
-                <img src="https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=400" class="reco-img">
-                <p class="reco-text">Fomentar actividades alternativas como el deporte, el juego al aire libre y la lectura</p>
-            </div>
-            <div class="reco-card">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400" class="reco-img">
-                <p class="reco-text">Establecer horarios claros y límites de tiempo para el uso de pantallas según la edad del niño.</p>
-            </div>
-            <div class="reco-card">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=400" class="reco-img">
-                <p class="reco-text">Acompañar y supervisar el contenido que ven los niños, priorizando contenido educativo y de calidad.</p>
-            </div>
+        <div class="reco-grid-vertical">
+
+            <a href="blog1.html" class="reco-card-v">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f2f70?q=80&w=500" class="reco-img-v">
+                <p class="reco-text-v">Evitar el uso de dispositivos durante los momentos de convivencia familiar</p>
+            </a>
+
+            <a href="blog2.html" class="reco-card-v">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500" class="reco-img-v">
+                <p class="reco-text-v">Fomentar actividades alternativas</p>
+            </a>
+
+            <a href="blog3.html" class="reco-card-v">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=500" class="reco-img-v">
+                <p class="reco-text-v">Establecer horarios claros y límites de tiempo para el uso de pantallas según la edad del niño.</p>
+            </a>
+
+            <a href="blog4.html" class="reco-card-v">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=500" class="reco-img-v">
+                <p class="reco-text-v">Acompañar y supervisar el contenido que ven los niños, priorizando contenido educativo y de calidad.</p>
+            </a>
+
         </div>
     </section>
+
 <script>
 const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
 aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); };
