@@ -1,6 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#333}
+body{font-family:Arial,Helvetica,sans-serif;background:#FFFBF5;color:#333}
 
 /* HEADER */
 header{display:flex;justify-content:space-between;align-items:center;background:#FFFBF5;border-bottom:1px solid #f0ebe0;position:sticky;top:0;z-index:1000;padding:14px 28px}
@@ -8,7 +8,7 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 .logo-img{width:58px;height:58px;object-fit:contain;border-radius:50%;display:block}
 .brand-name{font-family:'Georgia',serif;font-size:38px;color:#0097B2;font-weight:700;line-height:58px;text-decoration:none!important}
 .nav-center{display:flex;gap:28px;align-items:center}
-.nav-center a,.drop-btn{text-decoration:none;color:#555;font-size:17px;letter-spacing:1px;font-weight:500;background:none;border:none;cursor:pointer}
+.nav-center a,.drop-btn{text-decoration:none;color:#555;font-size:15px;letter-spacing:1px;font-weight:500;background:none;border:none;cursor:pointer}
 .nav-center a:hover,.drop-btn:hover{color:#0097B2}
 .dropdown{position:relative}
 .dropdown-content{display:none;position:absolute;left:50%;transform:translateX(-50%);top:38px;background:#fff;min-width:190px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.15);border:1px solid #eee;z-index:1200;overflow:hidden}
@@ -16,7 +16,7 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 .dropdown-content a{display:block;padding:12px 16px;font-size:14px;color:#444;text-decoration:none}
 .dropdown-content a:hover{background:#f0f9fa;color:#0097B2}
 
-/* HERO INDEX */
+/* HERO */
 .hero-image{width:100%;height:520px;background:url('banner.png') no-repeat center/cover;background-color:#000}
 .hero-text{background:#0097B2;color:#fff;text-align:center;padding:70px 20px 80px}
 .hero-text h1{font-family:'Georgia',serif;font-size:44px;margin-bottom:18px}
@@ -26,40 +26,56 @@ header{display:flex;justify-content:space-between;align-items:center;background:
 /* NOSOTROS Y MISION */
 .nosotros-section{max-width:900px;margin:0 auto;padding:50px 40px 80px; background:#fff;}
 .nosotros-section h1{font-family:'Georgia',serif;font-size:28px;font-weight:700;color:#111;margin-bottom:28px;}
-.nosotros-content p{font-size:15px;line-height:1.7;color:#333;margin-bottom:20px;text-align:left}
+.nosotros-content p{font-size:15px;line-height:1.7;color:#333;margin-bottom:20px;}
 
-/* BLOG CATALOGO ESTILO 5CM - CENTRADO */
-.catalog-section{background:#FFFBF5; padding:50px 20px 80px; text-align:center;}
-.catalog-title{font-family:'Georgia',serif; font-size:32px; font-weight:800; color:#1a1a1a; margin-bottom:8px;}
-.catalog-subtitle{font-size:14px; color:#8a8a8a; margin-bottom:40px; font-family:Arial, sans-serif;}
+/* BLOG ESTETICA CENTRADA - IGUAL EN PC Y CELULAR */
+.catalog-section{
+  background:#FFFBF5;
+  padding:50px 20px 80px;
+  text-align:center;
+  width:100%;
+}
+.catalog-title{
+  font-family:'Georgia',serif;
+  font-size:34px;
+  font-weight:800;
+  color:#1a1a1a;
+  margin-bottom:8px;
+  text-align:center;
+}
+.catalog-subtitle{
+  font-size:14px;
+  color:#8a8a8a;
+  margin-bottom:45px;
+  text-align:center;
+}
 .catalog-grid{
-  display:flex;
+  display:grid;
+  grid-template-columns: repeat(3, 260px);
   justify-content:center;
-  gap:28px;
-  flex-wrap:wrap;
+  gap:30px;
   max-width:1100px;
   margin:0 auto;
 }
 .catalog-card{
-  background:#fff;
+  background:#ffffff;
   width:260px;
-  border-radius:12px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.06);
-  padding:14px 14px 18px;
-  text-decoration:none;
+  border-radius:14px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.07);
+  padding:14px 14px 20px;
+  text-decoration:none!important;
   display:flex;
   flex-direction:column;
   align-items:center;
-  transition:transform 0.2s, box-shadow 0.2s;
+  transition:transform 0.2s;
 }
-.catalog-card:hover{transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+.catalog-card:hover{transform:translateY(-5px); box-shadow:0 10px 32px rgba(0,0,0,0.12);}
 .catalog-img{
-  width:100%;
-  height:210px;
+  width:100%!important;
+  height:210px!important;
   object-fit:cover;
   border-radius:10px;
   display:block;
-  background:#f5f0e8;
 }
 .catalog-card-title{
   font-family:'Georgia',serif;
@@ -68,31 +84,35 @@ header{display:flex;justify-content:space-between;align-items:center;background:
   color:#1a1a1a;
   margin-top:18px;
   margin-bottom:4px;
+  text-decoration:none!important;
 }
 .catalog-card-desc{
-  font-size:14px;
-  color:#222;
-  font-weight:600;
+  font-size:13px;
+  color:#666;
+  font-weight:500;
   margin-bottom:16px;
+  text-decoration:none!important;
 }
 .catalog-btn{
   background:#F5F0E8;
   border:1px solid #eee7d6;
   color:#333;
-  padding:8px 22px;
-  border-radius:20px;
+  padding:9px 24px;
+  border-radius:22px;
   font-size:13px;
   font-weight:600;
+  text-decoration:none!important;
 }
 
+/* CELULAR */
 @media (max-width:900px){
  header{flex-wrap:wrap;padding:10px 12px}
- .logo-img{width:42px;height:42px}.brand-name{font-size:28px;line-height:42px}
+ .logo-img{width:42px;height:42px}.brand-name{font-size:26px;line-height:42px}
  .nav-center{width:100%;justify-content:center;gap:16px;padding-top:8px;border-top:1px solid #f5f5f5;flex-wrap:wrap}
  .hero-image{height:280px}.hero-text h1{font-size:28px}
- .nosotros-section{padding:30px 16px 50px}
- .catalog-grid{gap:16px}
- .catalog-card{width:165px; padding:10px;}
- .catalog-img{height:140px;}
+ .catalog-grid{grid-template-columns: repeat(2, 165px); gap:16px;}
+ .catalog-card{width:165px; padding:10px 10px 14px;}
+ .catalog-img{height:140px!important;}
  .catalog-title{font-size:26px;}
+ .nosotros-section{padding:30px 16px 50px}
 }
