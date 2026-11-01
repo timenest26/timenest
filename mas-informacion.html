@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Información - TimeNest</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body style="background:#FFFBF5;">
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Niñez Conectada" class="logo-img">
+            <span class="brand-name">TimeNest</span>
+        </a>
+        <nav class="nav-center">
+            <div class="dropdown">
+                <a href="#" class="drop-btn" id="aboutBtn">NOSOTROS ▾</a>
+                <div class="dropdown-content" id="aboutMenu">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="mision.html">Nuestra Misión</a>
+                </div>
+            </div>
+            <a href="blog.html">BLOG</a>
+            <a href="mas-informacion.html" style="color:#0097B2; font-weight:700;">MÁS INFORMACIÓN</a>
+        </nav>
+    </header>
+
+    <section class="catalog-section" style="max-width:900px; margin:0 auto; text-align:left;">
+        <h1 style="font-family:'Georgia',serif; font-size:36px; font-weight:800; color:#1a1a1a; margin-bottom:10px;">Más Información sobre TimeNest</h1>
+        <p style="color:#666; font-size:16px; margin-bottom:30px;">Todo lo que necesitas saber para un uso saludable de pantallas</p>
+
+        <div style="background:#fff; border-radius:14px; padding:30px 32px; box-shadow:0 6px 22px rgba(0,0,0,0.06);">
+            <h3 style="font-size:22px; font-weight:700; color:#0097B2; margin-bottom:15px;">¿Qué es TimeNest?</h3>
+            <p style="font-size:16px; line-height:1.8; color:#333; margin-bottom:20px;">
+                TimeNest es una plataforma educativa creada para orientar a padres, madres y cuidadores en el manejo del tiempo de pantallas en niños de 0 a 12 años, promoviendo hábitos saludables, el juego libre y la convivencia familiar sin pantallas.
+            </p>
+
+            <h3 style="font-size:20px; font-weight:700; color:#1a1a1a; margin:25px 0 10px;">¿Por qué es importante?</h3>
+            <p style="font-size:16px; line-height:1.8; color:#333; margin-bottom:20px;">
+                El uso excesivo de dispositivos puede afectar el sueño, la atención, el desarrollo del lenguaje y las habilidades sociales. Aquí encontrarás estrategias prácticas y basadas en evidencia.
+            </p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:25px;">
+                <div style="background:#FFFBF5; padding:18px; border-radius:10px; border-left:4px solid #0097B2;">
+                    <strong>Guías por edad</strong><br>
+                    <span style="font-size:14px; color:#555;">De 0 a 12 años</span>
+                </div>
+                <div style="background:#FFFBF5; padding:18px; border-radius:10px; border-left:4px solid #0097B2;">
+                    <strong>Recursos gratuitos</strong><br>
+                    <span style="font-size:14px; color:#555;">Para toda la familia</span>
+                </div>
+            </div>
+
+            <a href="blog.html" style="display:inline-block; margin-top:30px; background:#0097B2; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600;">Ver Recomendaciones</a>
+        </div>
+    </section>
+
+<script>
+const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
+aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); };
+document.addEventListener('click',()=>{ aboutMenu.classList.remove('show'); });
+</script>
+</body>
+</html>
