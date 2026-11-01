@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convivencia Familiar - TimeNest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Niñez Conectada" class="logo-img">
+            <span class="brand-name">TimeNest</span>
+        </a>
+        <nav class="nav-center">
+            <div class="dropdown">
+                <a href="#" class="drop-btn" id="aboutBtn">NOSOTROS ▾</a>
+                <div class="dropdown-content" id="aboutMenu">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="mision.html">Nuestra Misión</a>
+                </div>
+            </div>
+            <a href="blog.html" style="color:#0097B2; font-weight:700;">BLOG</a>
+            <a href="#">PREGUNTAS</a>
+        </nav>
+    </header>
+    <section class="nosotros-section">
+        <a href="blog.html" style="color:#0097B2; text-decoration:none; font-size:14px;">← Volver a Recomendaciones</a>
+        <h1 style="margin-top:20px;">Evitar el uso de dispositivos durante la convivencia familiar</h1>
+        <img src="https://images.unsplash.com/photo-1544723795-3fb6469f2f70?q=80&w=800" style="width:100%; max-width:600px; height:350px; object-fit:cover; margin:20px 0;">
+        <div class="nosotros-content">
+            <p>Aquí va la información detallada de esta recomendación...</p>
+            <p>Explica por qué es importante no usar pantallas durante comidas y momentos familiares.</p>
+        </div>
+    </section>
+<script>
+const aboutBtn=document.getElementById('aboutBtn'), aboutMenu=document.getElementById('aboutMenu');
+aboutBtn.onclick=(e)=>{e.preventDefault(); e.stopPropagation(); aboutMenu.classList.toggle('show'); };
+document.addEventListener('click',()=>{ aboutMenu.classList.remove('show'); });
+</script>
+</body>
+</html>
